@@ -1,1 +1,25 @@
 @import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
+.st-editor {
+  display: block;
+}
+
+.st-editor__tag {
+  outline: none;
+}
+
+.st-editor__tag--bold {
+  font-weight: bold;
+}
+
+.st-editor__tag--italic {
+  font-style: italic;
+}
+
+.st-editor__tag--underline {
+  text-decoration: underline;
+}
+
+.st-editor__tag--line-through {
+  text-decoration: line-through;
+}
