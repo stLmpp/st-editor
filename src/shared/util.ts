@@ -1,7 +1,7 @@
 import { isNil } from 'st-utils';
 import { logger } from './logger';
 import { EditorData, EditorDataList, EditorDataTagList } from '../editor/editor.type';
-import { EDITOR_DATA_TAG_LIST_SET } from './constants';
+import { EDITOR_DATA_TAG_LIST_SET, EDITOR_ID_ATTRIBUTE } from './constants';
 
 export function assertNotNill<T>(value: T, messageIfNill: string): asserts value is NonNullable<T> {
   if (isNil(value)) {
@@ -11,4 +11,8 @@ export function assertNotNill<T>(value: T, messageIfNill: string): asserts value
 
 export function isEditorDataList(value: EditorData): value is EditorDataList {
   return EDITOR_DATA_TAG_LIST_SET.has(value.tag as EditorDataTagList);
+}
+
+export function isEditorElement(element: HTMLElement): boolean {
+  return element.hasAttribute(EDITOR_ID_ATTRIBUTE);
 }

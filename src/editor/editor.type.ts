@@ -3,6 +3,17 @@ import { EditorBaseOptions } from '../editor-base/editor-base.type';
 export interface EditorAdapter {
   querySelector<E extends Element = Element>(selectors: string): E | undefined | null;
   createElement<K extends keyof HTMLElementTagNameMap>(tag: K): HTMLElementTagNameMap[K];
+  addEventListener(
+    type: string,
+    listener: EventListenerOrEventListenerObject,
+    options?: boolean | AddEventListenerOptions
+  ): void;
+  removeEventListener(
+    type: string,
+    listener: EventListenerOrEventListenerObject,
+    options?: boolean | EventListenerOptions
+  ): void;
+  getSelection(): Selection | undefined | null;
 }
 
 export interface EditorOptions extends EditorBaseOptions {
@@ -20,6 +31,7 @@ export type EditorDataTagList = keyof Pick<HTMLElementTagNameMap, 'ul' | 'ol'>;
 export type EditorDataTag = EditorDataTagText | EditorDataTagList;
 
 export interface EditorDataBase {
+  id: number;
   attributes?: EditorAttributes;
 }
 
@@ -41,3 +53,5 @@ export interface EditorAttributes {
   underline?: boolean;
   'line-through'?: boolean;
 }
+
+export type EditorName = 'st-editor';

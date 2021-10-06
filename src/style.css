@@ -2,6 +2,7 @@
 
 .st-editor {
   display: block;
+  outline: none;
 }
 
 .st-editor__tag {

@@ -1,3 +1,4 @@
 export interface EditorBaseOptions {
-  element: Element;
+  element: HTMLElement;
+  readonly?: boolean;
 }

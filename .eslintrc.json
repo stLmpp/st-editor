@@ -91,7 +91,7 @@
       {
         "selector": "memberLike",
         "format": ["camelCase"],
-        "leadingUnderscore": "allow"
+        "leadingUnderscore": "allowSingleOrDouble"
       },
       {
         "selector": "typeLike",
